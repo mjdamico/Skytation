@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
 from .db import SessionLocal, Event
+from fastapi import HTTPException
 
 app = FastAPI()
 
@@ -46,6 +47,15 @@ def seed_one(body: SeedIn, db: Session = Depends(get_db)):
         try: import anyio; anyio.from_thread.run(send_json, c, ev)
         except: pass
     return ev
+
+@app.delete("/api/events/{event_id}")
+def delete_event(event_id: int, db: Session = Depends(get_db)):
+    ev = db.query(Event).filter(Event.id == event_id).first()
+    if not ev:
+        raise HTTPException(status_code=404, detail="Event not found")
+    db.delete(ev)
+    db.commit()
+    return {"ok": True, "deleted_id": event_id}
 
 # --- WebSocket for live events ---
 clients: set[WebSocket] = set()

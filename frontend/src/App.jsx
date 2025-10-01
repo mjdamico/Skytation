@@ -46,10 +46,19 @@ export default function App() {
       <ul style={{marginTop: 16}}>
         {events.map(ev => (
           <li key={ev.id}>
-            <b>{ev.plate_text}</b> — {ev.status} — {new Date(ev.ts).toLocaleString()}
-          </li>
-        ))}
-      </ul>
+          <b>{ev.plate_text}</b> — {ev.status} — {new Date(ev.ts).toLocaleString()}
+          <button 
+            style={{marginLeft: 8}} 
+            onClick={async () => {
+              await fetch(`http://localhost:8000/api/events/${ev.id}`, { method: "DELETE" })
+              setEvents(events.filter(e => e.id !== ev.id)) // update UI immediately
+            }}
+          >
+            Remove
+          </button>
+        </li>
+      ))}
+    </ul>
       <small>(WebSocket will prepend new rows live)</small>
     </div>
   )
