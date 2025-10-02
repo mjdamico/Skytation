@@ -17,6 +17,8 @@ pip install -r requirements.txt
 python -m uvicorn backend.main:app --reload --port 8000
 
 ### Frontend
+(Open second powershell)
+'''\Skytation
 cd frontend
 npm install
 npm run dev
