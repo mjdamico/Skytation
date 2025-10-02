@@ -10,6 +10,7 @@ Senior design project: Parking Enforcement Drone (App, Database & Enforcement su
 ## Dev setup
 ### Backend
 (I use powershell)
+'''\Skytation
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
