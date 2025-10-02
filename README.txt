@@ -9,7 +9,7 @@ Senior design project: Parking Enforcement Drone (App, Database & Enforcement su
 
 ## Dev setup
 ### Backend
-```bash
+(I use powershell)
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
