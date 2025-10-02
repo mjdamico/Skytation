@@ -7,7 +7,7 @@ from fastapi import HTTPException
 
 app = FastAPI()
 
-# CORS (we’ll add a Vite proxy later; keep this for now)
+# CORS (we’ll add a Vite proxy later)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],
