@@ -21,6 +21,7 @@ python -m uvicorn backend.main:app --reload --port 8000
 (Open second powershell)
 '''\Skytation
 cd frontend
+(install here -> https://nodejs.org/en/download)
 npm install
 npm run dev
 
