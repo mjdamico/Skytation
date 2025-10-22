@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* fill full vertical space */
+  background-color: #222;
+}
+
+.video-player {
+  width: 66vw;      /* roughly two-thirds of the screen */
+  height: auto;     /* maintain aspect ratio */
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
