@@ -26,3 +26,4 @@ npm install
 npm run dev
 
 Open: http://localhost:5173
+Databases: http://localhot:8000/api/timed_stays http://localhot:8000/api/permits http://localhot:8000/api/violations
