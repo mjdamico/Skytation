@@ -9,7 +9,6 @@ from starlette.responses import StreamingResponse, JSONResponse
 
 router = APIRouter(prefix="/video", tags=["video"])
 
-# Change this later to your actual RTSP URL, e.g. "rtsp://user:pass@host:554/stream"
 DEFAULT_RTSP_URL = None  # None means "no camera yet"
 
 class RTSPStreamer:
